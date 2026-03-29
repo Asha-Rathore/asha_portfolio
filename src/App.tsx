@@ -12,7 +12,7 @@ import routes from './routes';
 const App: React.FC = () => {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-      <Router>
+      <Router basename="/asha_portfolio">
         {/*<AuthProvider>*/}
         {/*<RouteGuard>*/}
         <IntersectObserver />

@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Download, Code, Mail } from 'lucide-react';
 import { scrollToElement } from '@/lib/animations';
 
-const CV_URL = '/cv/Asha_CV.pdf';
-const PROFILE_IMAGE = '/images/profile/asha.jpeg';
+const CV_URL = 'cv/Asha_CV.pdf';
+const PROFILE_IMAGE = 'images/profile/asha.jpeg';
 
 export function Hero() {
   const [displayText, setDisplayText] = useState('');

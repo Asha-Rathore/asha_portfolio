@@ -9,13 +9,13 @@ const projects = [
     name: 'License Generating Tool',
     description: 'Web application for automated generation of PDF licenses with customizable templates and secure distribution',
     techStack: ['Blazor', '.NET', 'Spring Boot', 'PDF Generation'],
-    githubUrl: 'https://github.com/Asha-Rathore/license-tool'
+    githubUrl: 'https://github.com/Asha-Rathore/License_Generator'
   },
   {
     name: 'Fare Share',
     description: 'Travel expense splitting application with real-time synchronization and multi-currency support',
     techStack: ['Flutter', 'REST APIs', 'Firebase', 'Real-time Sync'],
-    githubUrl: 'https://github.com/Asha-Rathore/fare-share'
+    githubUrl: 'https://github.com/Asha-Rathore/Fare_Share'
   },
   {
     name: 'Locks',
@@ -27,13 +27,13 @@ const projects = [
     name: 'Baby Bonding',
     description: 'Location-based application using Google Maps for connecting parents and organizing playdates',
     techStack: ['Flutter', 'Google Maps API', 'Geolocation'],
-    githubUrl: 'https://github.com/Asha-Rathore/baby-bonding'
+    githubUrl: 'https://github.com/Asha-Rathore'
   },
   {
     name: 'Rent Folkz',
     description: 'QR-based rental platform for seamless equipment booking and inventory management',
     techStack: ['Flutter', 'QR Integration', 'REST APIs', 'Payment Gateway'],
-    githubUrl: 'https://github.com/Asha-Rathore/rent-folkz'
+    githubUrl: 'https://github.com/Asha-Rathore'
   }
 ];
 
