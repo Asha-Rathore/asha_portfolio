@@ -63,9 +63,20 @@ export function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20"
+      className="py-16 md:py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Radiating circles */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-primary/10 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 border border-secondary/10 rounded-full animate-ping" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div
           className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'

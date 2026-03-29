@@ -40,9 +40,39 @@ export function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-16 md:py-24 bg-background"
+      className="py-16 md:py-24 bg-background relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      {/* Animated code-like background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+        <div className="absolute top-10 left-10 text-primary font-mono text-xs animate-pulse">
+          {'{ code: "clean" }'}
+        </div>
+        <div className="absolute top-20 right-20 text-secondary font-mono text-xs animate-pulse" style={{ animationDelay: '1s' }}>
+          {'function() { return true; }'}
+        </div>
+        <div className="absolute bottom-20 left-1/4 text-primary font-mono text-xs animate-pulse" style={{ animationDelay: '2s' }}>
+          {'const dev = "passionate";'}
+        </div>
+        <div className="absolute bottom-40 right-1/3 text-secondary font-mono text-xs animate-pulse" style={{ animationDelay: '1.5s' }}>
+          {'<Component />'}
+        </div>
+        
+        {/* Floating dots pattern */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${Math.random() * 5 + 3}s`
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div
           className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -62,7 +92,7 @@ export function Skills() {
             {skillCategories.map((category, categoryIndex) => (
               <Card
                 key={category.category}
-                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-hover transition-all duration-300"
+                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-hover hover:scale-105 transition-all duration-300"
                 style={{
                   animationDelay: `${categoryIndex * 100}ms`,
                   opacity: isVisible ? 1 : 0,
@@ -72,7 +102,7 @@ export function Skills() {
               >
                 <CardHeader>
                   <CardTitle className="text-lg md:text-xl flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     {category.category}
                   </CardTitle>
                 </CardHeader>

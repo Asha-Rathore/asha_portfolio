@@ -125,4 +125,13 @@ All colors MUST be HSL.
       transform: translateY(-20px);
     }
   }
+
+  @keyframes mesh-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
 }

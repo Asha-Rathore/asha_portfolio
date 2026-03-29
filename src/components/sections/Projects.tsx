@@ -44,9 +44,29 @@ export function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="py-16 md:py-24 bg-background"
+      className="py-16 md:py-24 bg-background relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      {/* Animated grid background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
+          `,
+          backgroundSize: '100px 100px',
+          animation: 'mesh-move 30s linear infinite'
+        }} />
+      </div>
+
+      {/* Floating project icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 text-4xl opacity-10 animate-float">💻</div>
+        <div className="absolute top-40 right-20 text-4xl opacity-10 animate-float" style={{ animationDelay: '1s' }}>🚀</div>
+        <div className="absolute bottom-20 left-1/4 text-4xl opacity-10 animate-float" style={{ animationDelay: '2s' }}>⚡</div>
+        <div className="absolute bottom-40 right-1/3 text-4xl opacity-10 animate-float" style={{ animationDelay: '1.5s' }}>🎨</div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div
           className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -66,7 +86,7 @@ export function Projects() {
             {projects.map((project, index) => (
               <Card
                 key={project.name}
-                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-hover hover:scale-105 transition-all duration-300 group"
+                className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-hover hover:scale-105 hover:-translate-y-2 transition-all duration-300 group"
                 style={{
                   animationDelay: `${index * 100}ms`,
                   opacity: isVisible ? 1 : 0,
@@ -76,7 +96,7 @@ export function Projects() {
               >
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                       <ExternalLink className="h-6 w-6 text-primary-foreground" />
                     </div>
                   </div>
@@ -103,7 +123,7 @@ export function Projects() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full gap-2"
+                    className="w-full gap-2 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
                     asChild
                   >
                     <a
