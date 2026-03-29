@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Download, Code, Mail } from 'lucide-react';
 import { scrollToElement } from '@/lib/animations';
 
-const CV_URL = 'https://miaoda-conversation-file.s3cdn.medo.dev/user-algotrj1adj4/conv-algtcfmyiwow/20260329/file-algwtu1o8g74.pdf';
-const PROFILE_IMAGE = 'https://miaoda-site-img.s3cdn.medo.dev/images/KLing_bb7fabb8-2524-4b8c-be17-fd21a86c2701.jpg';
+const CV_URL = '/cv/Asha_CV.pdf';
+const PROFILE_IMAGE = '/images/profile/asha.jpeg';
 
 export function Hero() {
   const [displayText, setDisplayText] = useState('');
